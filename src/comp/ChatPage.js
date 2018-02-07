@@ -46,7 +46,7 @@ class ChatPage extends Component {
             mode:1
         })
         //socket is the user
-        this.socket = mySocket("http://localhost:10001");
+        this.socket = mySocket("https://jtappsocket.herokuapp.com/");
         this.socket.emit("uName", this.state.username);
         this.socket.on("names", (data)=>{
             this.setState({
