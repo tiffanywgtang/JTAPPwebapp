@@ -1,0 +1,79 @@
+@font-face{
+    font-family:"spaceSmall";
+    font-style:normal;
+    font-weight:200;
+    src:url("font/fontSmall.ttf");
+    src:local('spaceSmall'), local('spaceSmall'),url("font/fontSmall.ttf") format(
+    'truetype');
+}
+@font-face{
+    font-family:"spaceBig";
+    font-style:normal;
+    font-weight:200;
+    src:url("font/fontBig.ttf");
+    src:local('spaceBig'), local('spaceBig'),url("font/fontBig.ttf") format(
+    'truetype');
+}
+
+body {
+  
+  /*margin: 0;
+    padding: 0;
+    color: white;
+    background-color: white;
+    background: url(backgroung.jpg) no-repeat center center;
+    background: linear-gradient(to bottom right, lightblue, lightgreen);
+    background-size: cover;*/
+}
+
+.App {
+  background: url("img/space-bg.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.logo {
+  width:150px;
+}
+
+.title {
+  margin-top: 30px;
+  margin-bottom: 60px;
+  color: white;
+  font-size: 45pt;
+  font-family: 'spaceBig';
+}
+
+.blue {
+  font-family: "spaceSmall";
+  text-align: center;
+  text-transform: uppercase;
+  color: #25BBC4;
+  font-size: 18pt;
+  margin-bottom: 50px;
+  }
+
+.green {
+  background-color: lightgreen;
+}
+
+.parag {
+  font-family: "spaceSmall";
+  font-size: 11pt;
+  text-align: left;
+  color:white;
+}
+
+.bLaunch {
+  text-align: center;
+  margin-top: 50px;
+  height: 60px;
+  width: 300px;
+  margin-bottom: 100px;
+  font-family:'spaceSmall';
+}
+
+img {
+  margin: 30px;
+}

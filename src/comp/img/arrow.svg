@@ -1,0 +1,25 @@
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 397.12 310.49">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #604aae;
+        stroke-linecap: round;
+      }
+
+      .cls-1 {
+        stroke-linejoin: round;
+        stroke-width: 32.68px;
+      }
+
+      .cls-2 {
+        stroke-miterlimit: 10;
+        stroke-width: 44.01px;
+      }
+    </style>
+  </defs>
+  <title>arrow</title>
+  <line class="cls-1" x1="16.34" y1="155.24" x2="139.34" y2="294.15"/>
+  <line class="cls-1" x1="16.34" y1="155.24" x2="139.34" y2="16.34"/>
+  <line class="cls-2" x1="375.12" y1="155.24" x2="30.01" y2="155.24"/>
+</svg>
