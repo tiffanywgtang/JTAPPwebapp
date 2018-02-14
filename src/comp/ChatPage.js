@@ -27,8 +27,11 @@ class ChatPage extends Component {
         this.saveMsg=this.saveMsg.bind(this);
         this.sendMsg=this.sendMsg.bind(this);
         this.changePage=this.changePage.bind(this);
+        this.leaveChat=this.leaveChat.bind(this);
     }
-    
+    componentWillUnmount(){
+        
+    }
     componentDidMount() {
  
     this.Clock = setInterval( () => this.GetTime(), 1000 );
@@ -73,7 +76,12 @@ class ChatPage extends Component {
         }) 
     }
     
-    
+    leaveChat(){
+        this.setState({
+            mode:2
+        })
+        this.socket.disconnect();
+    }
     
     
     GetTime() {
@@ -126,6 +134,8 @@ class ChatPage extends Component {
         var msg = this.state.username+" "+"("+this.state.time+")"+": " +this.state.msg;
         this.socket.emit("msg", msg);         
     }
+    
+    
   render() {
       var comp=null;
       
@@ -177,7 +187,7 @@ class ChatPage extends Component {
             <div className="chatBox">
               <div className="onlineusers">
                 
-                <img src={exit} alt="exitarrow" className="exit" onClick={this.changePage.bind(this,2)}/>
+                <img src={exit} alt="exitarrow" className="exit" onClick={this.leaveChat}/>
               
                 Online: <hr/>
                 {allUsers}

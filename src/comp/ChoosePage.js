@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import ChatPage from './ChatPage';
+import StickerPage from './StickerPage';
 import App from '../App';
 import './css/choosePage.css'; 
 
@@ -27,10 +28,16 @@ class ChoosePage extends Component {
               <div>
               
         <Container>
-        <Row>
-          
-            <button id="chatBtn"className="btn btn-outline-info bLaunch" onClick={this.changePage.bind(this,1)}>Start Chat!</button>
-          
+        <Row className="row1">
+             
+              <div class="col-sm-6"> 
+                <button id="chatBtn" className="btn btn-outline-info bLaunch" onClick={this.changePage.bind(this,1)}>Start Chat!</button>
+              </div>
+      
+      
+            <div class="col-sm-6"> 
+              <button id="stickerBtn" className="btn btn-outline-info bLaunch" onClick={this.changePage.bind(this,2)}>Sticker Page</button>
+            </div>
               
         </Row>
               
@@ -42,6 +49,10 @@ class ChoosePage extends Component {
       else if(this.state.currentPage === 1){
           comp=(
               <ChatPage />
+          );
+      }else if(this.state.currentPage === 2){
+          comp=(
+              <StickerPage />
           );
       }
       

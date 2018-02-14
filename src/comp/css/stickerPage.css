@@ -1,0 +1,52 @@
+.stickerApp {
+    background: url("../img/space-bg.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    
+}
+#display {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+/*    cursor: none;*/
+}
+
+#controls {
+    width: 35vw;
+    height: 100vh;
+    background-color: rgba(36, 31, 104, 0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+#myImg{
+    position: absolute;
+    
+}
+
+.allImgs {
+    position: absolute;
+}
+
+.exit {
+    height: 25px;
+    width: 25px;
+    left: 2vw;
+    top: 2vh;
+    position: fixed;
+    margin: 0 auto;
+
+}
+
+.exit:hover{
+    background-image: url('../img/exit.svg');
+    position: fixed;
+    width: 30px;
+    height: 30px;
+}

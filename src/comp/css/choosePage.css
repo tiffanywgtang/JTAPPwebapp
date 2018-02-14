@@ -5,12 +5,11 @@
     text-align: center;
     width: 100vw;
     height: 100vh;
+    align-content: center;
+    
     
 }
 
-#chatBtn {
-    
-    position: fixed; 
-    
-    
+.row1 {
+    padding-top: 25%;
 }
