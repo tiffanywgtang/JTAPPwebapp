@@ -19,8 +19,9 @@ class ChatPage extends Component {
             allusers:[],
             allmsgs:[],
             msg:"",
-            avatar:"",
-            time:""
+            time:"",
+            avatar:[a1,a2,a3,a4,a5]
+    
         }
         this.joinChat=this.joinChat.bind(this);
         this.saveName=this.saveName.bind(this);
@@ -163,9 +164,7 @@ class ChatPage extends Component {
             </div>
             );
       }
-      
-     
-      
+            
       else if(this.state.mode === 1){
         
           var allUsers = this.state.allusers.map((obj, i)=>{
@@ -178,6 +177,7 @@ class ChatPage extends Component {
            var allmsgs = this.state.allmsgs.map((obj, i)=>{
                   return(
                   <div key={i} className="theMSG">
+                    <img src={this.state.avatar[0]} alt="avatar" className="aChat"/>
                       {obj}
                       </div>
                   )
@@ -186,7 +186,6 @@ class ChatPage extends Component {
           comp = (
             <div className="chatBox">
               <div className="onlineusers">
-                
                 <img src={exit} alt="exitarrow" className="exit" onClick={this.leaveChat}/>
               
                 Online: <hr/>
