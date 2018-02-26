@@ -4,6 +4,9 @@ import ChatPage from './ChatPage';
 import StickerPage from './StickerPage';
 import App from '../App';
 import './css/choosePage.css'; 
+import pinkPlanet from '../img/pinkPlanet.svg';
+import greyPlanet from '../img/greyPlanet.svg';
+import earth from '../img/earth.svg';
 
 class ChoosePage extends Component {
     constructor(props){
@@ -12,6 +15,7 @@ class ChoosePage extends Component {
             currentPage:0
         }
         this.changePage=this.changePage.bind(this);
+        this.planetClick1=this.planetClick1.bind(this);
     }
     
     changePage(bool){
@@ -19,6 +23,13 @@ class ChoosePage extends Component {
             currentPage:bool
         })
     }
+    
+    planetClick1(){
+        this.setState({
+            currentPage:1
+        })
+    }
+    
     
   render() {
       var comp=null;
@@ -28,15 +39,26 @@ class ChoosePage extends Component {
               <div>
               
         <Container>
+              <h2 className="headertitle">Choose A Planet To Explore!</h2>
         <Row className="row1">
-             
-              <div class="col-sm-6"> 
-                <button id="chatBtn" className="btn btn-outline-info bLaunch" onClick={this.changePage.bind(this,1)}>Start Chat!</button>
+              
+              <div class="col-sm-4"> 
+                <h4 className="headerfont">Chat with Earthlings!</h4>
+                <img src={earth} alt="Earth" className="earth" onClick={this.changePage.bind(this,1)}/>
+                
               </div>
       
       
-            <div class="col-sm-6"> 
-              <button id="stickerBtn" className="btn btn-outline-info bLaunch" onClick={this.changePage.bind(this,2)}>Sticker Page</button>
+            <div class="col-sm-4"> 
+                 <h4 className="headerfont">Sticker Page!</h4>
+                <img src={pinkPlanet} alt="Pink Planet" className="pinkPlanet" onClick={this.changePage.bind(this,2)}/>
+                
+            </div>
+      
+            <div class="col-sm-4"> 
+                 <h4 className="headerfont">Coming Soon!</h4>
+                <img src={greyPlanet} alt="Grey Planet" className="greyPlanet" onClick={this.changePage.bind(this,2)}/>
+                
             </div>
               
         </Row>

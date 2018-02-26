@@ -20,6 +20,7 @@ class StickerPage extends Component {
             allUsers:[],
             myid:null,
             showDisplay:false,
+            stickers:[]
         }
         
         this.changePage=this.changePage.bind(this);
@@ -33,27 +34,38 @@ class StickerPage extends Component {
             currentPage:bool
         })
     }
-          componentDidMount(){
+    componentDidMount(){
         this.socket = mySocket("https://jtappsticker.herokuapp.com/");
+        //this.socket = mySocket("http://localhost:10002");
         this.socket.on("userJoined",(data)=>{
            this.setState({
                allUsers:data
            }) 
         });
         
+        this.socket.emit("joinRoom",);
+        
         this.socket.on("yourid", (data)=>{
             this.setState({
                 myid:data
             })
-        })
+        });
         
         this.socket.on("newmove", (data)=>{
             
             this.refs["u"+data.id].style.left = data.x+"px";
             this.refs["u"+data.id].style.top = data.y+"px";
             this.refs["u"+data.id].src = data.src;
-        })
+        });
         
+        this.socket.on("newSticker", (data)=>{
+            this.setState({
+                stickers:data
+            })
+        })      
+              
+              
+              
         this.refs.theDisplay.addEventListener("mousemove", (ev)=>{
             
             if(this.state.myid === null){
@@ -68,9 +80,24 @@ class StickerPage extends Component {
                 y:ev.pageY,
                 id:this.state.myid,
                 src: this.refs["u"+this.state.myid].src
-            })
+            });
         });
+              
+              
+              
+              
+              
+        this.refs.theDisplay.addEventListener("click", (ev)=>{
+                this.socket.emit("stick",{
+                    x:ev.pageX,
+                    y:ev.pageY,
+                    src: this.refs["u"+this.state.myid].src
+                })
+            });
     }
+    
+    
+    
     
     handleImg(evt){
         this.refs["u"+this.state.myid].src=evt.target.src;
@@ -87,9 +114,18 @@ class StickerPage extends Component {
     
   render() {
       console.log(this.state.allUsers);
+      
       var allImgs = this.state.allUsers.map((obj, i)=>{
           return(
             <img ref={"u"+obj} className="allImgs" src={this.state.myImg} height={50} key={i}/>
+          )
+      })
+      
+      
+      var allstickers = this.state.stickers.map((obj, i)=>{
+          var mystyle = {left:obj.x, top:obj.y};
+          return(
+            <img style={mystyle} key={i} src={obj.src} height={50} className="allImgs"/>
           )
       })
       
@@ -103,15 +139,14 @@ class StickerPage extends Component {
          comp = (
         <div>
               <div ref ="theDisplay" id="display">
-                <img src={exit} alt="exitarrow" className="exit" onClick={this.leaveChat}/>
+                    <img src={exit} alt="exitarrow" className="exit" onClick={this.leaveChat}/>
               
-                {allImgs}
-                 
+                    {allImgs}
+                    {allstickers}
                 </div>
         
         
             <div id="controls">
-                {this.state.myid}
                 <img src ={this.state.myImg} height={50} onClick={this.handleImg}/>
                 <img src ={this.state.myImg2} height={50} onClick={this.handleImg}/>
                 <img src ={this.state.myImg3} height={50} onClick={this.handleImg}/> 

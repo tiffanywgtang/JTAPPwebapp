@@ -51,6 +51,7 @@ class ChatPage extends Component {
         })
         //socket is the user
         this.socket = mySocket("https://jtappsocket.herokuapp.com/");
+        //this.socket = mySocket("http://localhost:10001");
         this.socket.emit("uName", this.state.username);
         this.socket.on("names", (data)=>{
             this.setState({
@@ -177,8 +178,7 @@ class ChatPage extends Component {
            var allmsgs = this.state.allmsgs.map((obj, i)=>{
                   return(
                   <div key={i} className="theMSG">
-                    <img src={this.state.avatar[0]} alt="avatar" className="aChat"/>
-                      {obj}
+                    <img src={this.state.avatar[0]} alt="avatar" className="aChat"/>{obj}
                       </div>
                   )
               })
