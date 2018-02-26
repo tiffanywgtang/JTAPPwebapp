@@ -12,16 +12,16 @@ class StickerPage extends Component {
         super(props);
         this.state={
             currentPage:0,
-            myImg: require("../img/astronaut.svg"),
-            myImg2: require("../img/bluealien.svg"),
-            myImg3: require("../img/greenalien.svg"),
-            myImg4: require("../img/rocket.svg"),
-            myImg5: require("../img/star.svg"),
+            myImg: require("../img/sticker-astronaut.svg"),
+            myImg2: require("../img/sticker-rocket.svg"),
+            myImg3: require("../img/sticker-satelite.svg"),
+            myImg4: require("../img/sticker-spacecraft.svg"),
+            myImg5: require("../img/greenalien.svg"),
             allUsers:[],
             myid:null,
             showDisplay:false,
-            
         }
+        
         this.changePage=this.changePage.bind(this);
         this.leaveChat=this.leaveChat.bind(this);
         this.handleImg=this.handleImg.bind(this);
