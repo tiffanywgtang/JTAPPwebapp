@@ -55,8 +55,8 @@ class ChatPage extends Component {
             mode:1
         })
         //socket is the user
-        //this.socket = mySocket("https://jtappsocket.herokuapp.com/");
-        this.socket = mySocket("http://localhost:10001");
+        this.socket = mySocket("https://jtappsocket.herokuapp.com/");
+        //this.socket = mySocket("http://localhost:10001");
         var usrinfo = {
             name: this.state.username,
             ava: this.state.avatarIndex

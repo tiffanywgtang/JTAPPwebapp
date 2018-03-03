@@ -35,8 +35,8 @@ class StickerPage extends Component {
         })
     }
     componentDidMount(){
-        this.socket = //mySocket("https://jtappsticker.herokuapp.com/");
-        this.socket = mySocket("http://localhost:10002");
+        this.socket = mySocket("https://jtappsticker.herokuapp.com/");
+        //this.socket = mySocket("http://localhost:10002");
         this.socket.on("userJoined",(data)=>{
            this.setState({
                allUsers:data
