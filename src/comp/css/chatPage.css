@@ -38,14 +38,14 @@
     outline:none !important;
 }
 
-.joinBtn:hover {
-    opacity: 0.7;
-}
+        .joinBtn:hover {
+            opacity: 0.7;
+        }
 
-.joinBtn:active {
-    box-shadow: 0 3px 0 #27878E;
-    top: 3px;
-}
+        .joinBtn:active {
+            box-shadow: 0 3px 0 #27878E;
+            top: 3px;
+        }
 
 .userLogin {
     color: #4D2291;
@@ -67,13 +67,13 @@
     
 }
 
-.sendBtn:hover {
-    opacity: 0.7;
-}
-.sendBtn:active {
-    box-shadow: 0 3px 0 #6E42B5;
-    top: 3px;
-}
+        .sendBtn:hover {
+            opacity: 0.7;
+        }
+        .sendBtn:active {
+            box-shadow: 0 3px 0 #6E42B5;
+            top: 3px;
+        }
 
 .chatDisplay {
     width: 80vw;
@@ -116,14 +116,16 @@
 }
 
 .avatar {
+    cursor: pointer;
     max-width: 60px;
     min-width: 30px;
     margin-left: -2px;
     margin-top:-10px;
-    -moz-box-shadow: 0px 10px 14px -7px #276873;
-	-webkit-box-shadow: 0px 10px 14px -7px #276873;
-	box-shadow: 0px 10px 14px -7px #276873;
 }
+
+        .avatar:hover {
+            -webkit-filter: drop-shadow(0px 0px 10px rgba(119, 7, 254, 1));
+        }
 
 .aText{
     color:white;
@@ -144,13 +146,13 @@
     position: absolute;
     outline:none !important;
 }
-.leaveBtn:hover {
-    background: rgba(255,255,255,0.7);
-}
-.leaveBtn:active {
-    box-shadow: 0 3px 0 #6E42B5;
-    bottom: 2vh;
-}
+        .leaveBtn:hover {
+            background: rgba(255,255,255,0.7);
+        }
+        .leaveBtn:active {
+            box-shadow: 0 3px 0 #6E42B5;
+            bottom: 2vh;
+        }
 .exit {
     height: 25px;
     width: 25px;
@@ -160,14 +162,14 @@
     margin: 0 auto;
 }
 
-.exit:hover{
-    background-image: url('../img/exit.svg');
-    position: fixed;
-    width: 30px;
-    height: 30px;
-}
+        .exit:hover{
+            background-image: url('../img/exit.svg');
+            position: fixed;
+            width: 30px;
+            height: 30px;
+        }
 
 .aChat {
-    width: 30px;
+    width: 50px;
     height: auto;
 }

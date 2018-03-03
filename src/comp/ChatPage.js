@@ -20,7 +20,8 @@ class ChatPage extends Component {
             allmsgs:[],
             msg:"",
             time:"",
-            avatar:[a1,a2,a3,a4,a5]
+            avatar:[a1,a2,a3,a4,a5],
+            avatarIndex:0
     
         }
         this.joinChat=this.joinChat.bind(this);
@@ -30,9 +31,13 @@ class ChatPage extends Component {
         this.changePage=this.changePage.bind(this);
         this.leaveChat=this.leaveChat.bind(this);
     }
+    
+    
     componentWillUnmount(){
-        
+        this.socket.disconnect();
     }
+    
+    
     componentDidMount() {
  
     this.Clock = setInterval( () => this.GetTime(), 1000 );
@@ -50,9 +55,13 @@ class ChatPage extends Component {
             mode:1
         })
         //socket is the user
-        this.socket = mySocket("https://jtappsocket.herokuapp.com/");
-        //this.socket = mySocket("http://localhost:10001");
-        this.socket.emit("uName", this.state.username);
+        //this.socket = mySocket("https://jtappsocket.herokuapp.com/");
+        this.socket = mySocket("http://localhost:10001");
+        var usrinfo = {
+            name: this.state.username,
+            ava: this.state.avatarIndex
+        }
+        this.socket.emit("uName", usrinfo);
         this.socket.on("names", (data)=>{
             this.setState({
                 allusers:data
@@ -133,14 +142,24 @@ class ChatPage extends Component {
     
     
     sendMsg(){
+        
         var msg = this.state.username+" "+"("+this.state.time+")"+": " +this.state.msg;
         this.socket.emit("msg", msg);         
     }
     
-    
+    changeava(i){
+        this.setState({
+            avatarIndex:i
+        })
+        
+    }
   render() {
       var comp=null;
-      
+      var allava = this.state.avatar.map((obj,i)=>{
+         return(
+             <img ref="avaImg" src={obj} alt="img" className="avatar" key={i} onClick={this.changeava.bind(this, i)}/>
+        )
+      });
       if(this.state.mode === 0){  
       comp = (
             <div>
@@ -152,11 +171,7 @@ class ChatPage extends Component {
                     <button className="joinBtn" onClick={this.joinChat}>Join</button>
                 <div className="avatarBox">
                     <p className="aText">Choose your avatar:</p>
-                    <img src={a1} alt="a1" className="avatar"/>
-                    <img src={a2} alt="a2" className="avatar"/>
-                    <img src={a3} alt="a3" className="avatar"/>
-                    <img src={a4} alt="a4" className="avatar"/>
-                    <img src={a5} alt="a5" className="avatar"/>
+                    {allava}
                 </div>
                 </div>
                 </Col>
@@ -171,14 +186,14 @@ class ChatPage extends Component {
           var allUsers = this.state.allusers.map((obj, i)=>{
           return(
             <div key={i}>
-              {obj}
+              <img className="aChat" src={this.state.avatar[obj.ava]}alt="img"/> {obj.name}
               </div>
           )
       })
            var allmsgs = this.state.allmsgs.map((obj, i)=>{
                   return(
                   <div key={i} className="theMSG">
-                    <img src={this.state.avatar[0]} alt="avatar" className="aChat"/>{obj}
+                      {obj}
                       </div>
                   )
               })
