@@ -114,29 +114,29 @@ class ChatPage extends Component {
 
         }
 
-    if( hour > 12 )
-    {
-      hour = hour - 12;
-    } 
-    if( hour == 0 )
-    {
-        hour = 12;
-    } 
- 
-    minutes = date.getMinutes();
- 
-    if(minutes < 10)
-    {
-      minutes = '0' + minutes.toString();
-    
-    }
- 
-    fullTime = hour.toString() + ':' + minutes.toString() + ':' + ' ' + TimeType.toString();
- 
-    this.setState({
- 
-      time: fullTime
- 
+            if( hour > 12 )
+            {
+              hour = hour - 12;
+            } 
+            if( hour == 0 )
+            {
+                hour = 12;
+            } 
+
+            minutes = date.getMinutes();
+
+            if(minutes < 10)
+            {
+              minutes = '0' + minutes.toString();
+
+            }
+
+            fullTime = hour.toString() + ':' + minutes.toString() + ':' + ' ' + TimeType.toString();
+
+            this.setState({
+
+              time: fullTime
+
     })
   }
     
