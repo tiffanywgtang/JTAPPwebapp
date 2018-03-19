@@ -10,7 +10,7 @@ class Player2 extends Component {
   constructor(props){
       super(props);
        this.state ={
-            asteroid:require("./img/asteroid.png"),
+            asteroid:require("../img/asteroid.png"),
             score1:0,
             score2:0
         } 
