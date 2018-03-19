@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import ChatPage from './ChatPage';
 import StickerPage from './StickerPage';
-import QuizGame from './QuizGame';
+import Asteroids from './Asteroids';
 import './css/choosePage.css'; 
 import pinkPlanet from '../img/pinkPlanet.svg';
 import greyPlanet from '../img/greyPlanet.svg';
@@ -56,7 +56,7 @@ class ChoosePage extends Component {
             </div>
       
             <div class="col-sm-4"> 
-                 <h4 className="headerfont">Coming Soon!</h4>
+                 <h4 className="headerfont">Asteroid Game!</h4>
                 <img src={greyPlanet} alt="Grey Planet" className="greyPlanet" onClick={this.changePage.bind(this,3)}/>
                 
             </div>
@@ -78,7 +78,7 @@ class ChoosePage extends Component {
           );
       }else if(this.state.currentPage === 3){
           comp=(
-              <QuizGame />
+              <Asteroids />
           );
       }
       
