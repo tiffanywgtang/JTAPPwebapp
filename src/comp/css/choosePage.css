@@ -57,8 +57,16 @@
 .greyPlanet {
     width: 250px;
     height: 250px;
-    opacity: 0.2;
     cursor: pointer;
+    animation-name: floatingG;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  
+    margin-top: 5px;
+}
+.greyPlanet:hover {
+    opacity: 0.80;
 }
 
 @keyframes floating {
@@ -69,5 +77,10 @@
 @keyframes floatingP {
     from { transform: translate(0,  0px); }
     65%  { transform: translate(0, 25px); }
+    to   { transform: translate(0, -0px); }    
+}
+@keyframes floatingG {
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(0, 50px); }
     to   { transform: translate(0, -0px); }    
 }
