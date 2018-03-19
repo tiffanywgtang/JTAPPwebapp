@@ -51,7 +51,7 @@ class Player2 extends Component {
         <Alert color="success">
             You saved the World!
             <br/><br/>
-            <Button color="success" onClick={(e) => {this.playAgain(e)}}>Play Again</Button>
+            <Button color="success">Play Again</Button>
         </Alert> 
         )
     }if(this.state.score1 == 4){
@@ -59,7 +59,7 @@ class Player2 extends Component {
         <Alert color="success">
             Your oponent saved the World!
             <br/><br/>
-            <Button color="success" onClick={(e) => {this.playAgain(e)}}>Play Again</Button>
+            <Button color="success">Play Again</Button>
         </Alert> 
         )
     }

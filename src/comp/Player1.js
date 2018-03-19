@@ -61,7 +61,7 @@ class Player1 extends Component {
             <Alert color="success">
                 Your oponent saved the World!
                 <br/><br/>
-                <Button color="success" onClick={(e) => {this.playAgain(e)}}>Play Again</Button>
+                <Button color="success">Play Again</Button>
             </Alert> 
             )
         }
