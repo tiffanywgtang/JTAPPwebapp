@@ -17,8 +17,8 @@ class Player1 extends Component {
     }
     
      componentDidMount(){
-          this.socket = mySocket("https://jtappastroids.herokuapp.com/");   
-         //this.socket = mySocket("http://localhost:10004");
+          //this.socket = mySocket("https://jtappastroids.herokuapp.com/");   
+         this.socket = mySocket("http://localhost:10004");
 
             this.socket.on("p2Score", (data)=>{
                 this.setState({
@@ -42,9 +42,7 @@ class Player1 extends Component {
       this.socket.emit("p1score", this.state.score1); 
   }
 
-  playAgain(e){
-    window.location.reload()
-  }
+  
 
  render() {
     
@@ -53,7 +51,7 @@ class Player1 extends Component {
             <Alert color="success">
                 You saved the World!
                 <br/><br />
-                <Button color="success">Play Again</Button>
+                <Button color="success" onClick={this.props.playagain}>Play Again</Button>
             </Alert> 
             )
         }if(this.state.score2 == 4){
@@ -61,7 +59,7 @@ class Player1 extends Component {
             <Alert color="success">
                 Your oponent saved the World!
                 <br/><br/>
-                <Button color="success">Play Again</Button>
+                <Button color="success" onClick={this.props.playagain}>Play Again</Button>
             </Alert> 
             )
         }

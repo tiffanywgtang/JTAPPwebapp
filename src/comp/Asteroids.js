@@ -23,8 +23,8 @@ class Asteroids extends Component {
     }
     
     componentDidMount(){
-         this.socket = mySocket("https://jtappastroids.herokuapp.com/");
-            //this.socket = mySocket("http://localhost:10004");
+         //this.socket = mySocket("https://jtappastroids.herokuapp.com/");
+            this.socket = mySocket("http://localhost:10004");
 
             this.socket.on("userjoined", (data)=>{
                 this.setState({
@@ -55,7 +55,12 @@ class Asteroids extends Component {
       
       this.socket.emit("joingame", playStr);
   }
-    
+
+  playagain=()=>{
+      this.setState({
+          screen:0
+      })
+  }
   addToScore=()=>{
     if (this.state.clicked){
         return;
@@ -86,11 +91,16 @@ class Asteroids extends Component {
             )
         }else if (this.state.screen === 1){
              comp =(
-                <Player1 />
+                <Player1 
+                 playagain = {this.playagain}
+                 />
         )
         }else if (this.state.screen === 2){
              comp =(
-                 <Player2 />
+                 <Player2 
+                 playagain = {this.playagain}
+
+                 />
         )
         }
     
