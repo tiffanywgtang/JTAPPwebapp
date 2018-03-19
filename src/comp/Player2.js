@@ -17,8 +17,8 @@ class Player2 extends Component {
     }
     
      componentDidMount(){
-            //this.socket = mySocket("https://jtappastroids.herokuapp.com/");
-            this.socket = mySocket("http://localhost:10004");
+            this.socket = mySocket("https://jtappastroids.herokuapp.com/");
+            //this.socket = mySocket("http://localhost:10004");
 
             this.socket.on("p1Score", (data)=>{
                 this.setState({
