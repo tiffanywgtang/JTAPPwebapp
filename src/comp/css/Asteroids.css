@@ -11,7 +11,7 @@
 
 
 .bg {
-    background: url("./imgs/space-bg.svg");
+    background: url("../img/space-bg.svg");
     background-size: cover;
     background-repeat: no-repeat;
     text-align: center;
