@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Asteroids.css';
+import './css/Asteroids.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container, Row, Col } from 'reactstrap';
 import mySocket from "socket.io-client";
