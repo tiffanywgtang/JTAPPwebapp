@@ -13,7 +13,7 @@ class Asteroids extends Component {
       super(props);
       
      this.state ={
-            asteroid:require("./img/asteroid.png"),
+            asteroid:require("../img/asteroid.png"),
             screen:0,
             allplayers: [],
             myId:null,
