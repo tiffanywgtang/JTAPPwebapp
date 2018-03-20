@@ -1,0 +1,47 @@
+.playerPage {
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+
+    
+}
+
+
+#joinBtn {
+    width: 100px;
+    float: left;
+    
+}
+
+        #joinBtn:hover {
+            opacity: 0.7;
+        }
+
+#userLogin {
+    width:20vw;
+    float: right;
+}
+
+.avatarBox {
+    margin: 0 auto;
+    position: relative;
+}
+
+.avatar {
+    cursor: pointer;
+    max-width: 60px;
+    min-width: 30px;
+    margin-right: 5px;
+    margin-top:-10px;
+    
+}
+
+        .avatar:hover {
+            -webkit-filter: drop-shadow(0px 0px 10px rgba(119, 7, 254, 1));
+        }
+
+.title3 {
+    padding-top: 30vh;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}

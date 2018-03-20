@@ -69,6 +69,21 @@
     opacity: 0.80;
 }
 
+.yellowPlanet {
+    width: 250px;
+    height: 250px;
+    cursor: pointer;
+    animation-name: floatingY;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  
+    margin-top: 5px;
+}
+.yellowPlanet:hover {
+    opacity: 0.80;
+}
+
 @keyframes floating {
     from { transform: translate(0,  0px); }
     65%  { transform: translate(0, -15px); }
@@ -82,5 +97,10 @@
 @keyframes floatingG {
     from { transform: translate(0,  0px); }
     65%  { transform: translate(0, 50px); }
+    to   { transform: translate(0, -0px); }    
+}
+@keyframes floatingY {
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(0, -17px); }
     to   { transform: translate(0, -0px); }    
 }

@@ -3,10 +3,12 @@ import { Container, Row, Col } from 'reactstrap';
 import ChatPage from './ChatPage';
 import StickerPage from './StickerPage';
 import Asteroids from './Asteroids';
+import Quiz from './Quiz';
 import './css/choosePage.css'; 
 import pinkPlanet from '../img/pinkPlanet.svg';
 import greyPlanet from '../img/greyPlanet.svg';
 import earth from '../img/earth.svg';
+import yellowPlanet from '../img/yellowPlanet.svg';
 
 class ChoosePage extends Component {
     constructor(props){
@@ -42,22 +44,28 @@ class ChoosePage extends Component {
               <h2 className="headertitle">Choose A Planet To Explore!</h2>
         <Row className="row1">
               
-              <div class="col-sm-4"> 
+              <div class="col-sm-3"> 
                 <h4 className="headerfont">Chat with Earthlings!</h4>
                 <img src={earth} alt="Earth" className="earth" onClick={this.changePage.bind(this,1)}/>
                 
               </div>
       
       
-            <div class="col-sm-4"> 
+            <div class="col-sm-3"> 
                  <h4 className="headerfont">Sticker Page!</h4>
                 <img src={pinkPlanet} alt="Pink Planet" className="pinkPlanet" onClick={this.changePage.bind(this,2)}/>
                 
             </div>
       
-            <div class="col-sm-4"> 
+            <div class="col-sm-3"> 
                  <h4 className="headerfont">Asteroid Game!</h4>
                 <img src={greyPlanet} alt="Grey Planet" className="greyPlanet" onClick={this.changePage.bind(this,3)}/>
+                
+            </div>
+      
+            <div class="col-sm-3"> 
+                 <h4 className="headerfont">Quiz Game!</h4>
+                <img src={yellowPlanet} alt="Yellow Planet" className="yellowPlanet" onClick={this.changePage.bind(this,4)}/>
                 
             </div>
               
@@ -79,6 +87,10 @@ class ChoosePage extends Component {
       }else if(this.state.currentPage === 3){
           comp=(
               <Asteroids />
+          );
+      }else if(this.state.currentPage === 4){
+          comp=(
+             <Quiz />
           );
       }
       
