@@ -26,6 +26,12 @@ class ChoosePage extends Component {
         })
     }
     
+    backButton=()=>{
+        this.setState({
+            currentPage:0
+        })
+    }
+    
     planetClick1(){
         this.setState({
             currentPage:1
@@ -90,7 +96,9 @@ class ChoosePage extends Component {
           );
       }else if(this.state.currentPage === 4){
           comp=(
-             <Quiz />
+             <Quiz 
+              backButton = {this.backButton}
+              />
           );
       }
       

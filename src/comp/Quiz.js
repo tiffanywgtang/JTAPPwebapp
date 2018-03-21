@@ -31,7 +31,7 @@ class Quiz extends Component {
           comp = (   
           <Row>
             
-              <Col sm="12"><h1 className="title white shadow">Welcome to the Space Quiz!</h1> </Col>
+              <Col sm="12"><h1 className="title5 white shadow">Welcome to the Space Quiz!</h1> </Col>
             
               <Col sm="12"><h3 className="white shadow">Choose one:</h3> <hr/></Col>
             
@@ -43,7 +43,9 @@ class Quiz extends Component {
         )
       }else if(this.state.page === 1){
           comp = (
-          <HostPage />
+          <HostPage 
+              backButton = {this.props.backButton}
+              />
           )
       }else if(this.state.page === 2){
           comp = (

@@ -103,8 +103,9 @@
     width: auto;
 }
 
-.title {
+.title0 {
     padding-top: 30px;
+    font-family: 'Righteous', cursive;
 }
 
 .shadow {

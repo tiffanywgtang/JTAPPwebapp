@@ -31,7 +31,7 @@ class App extends Component {
                 <img className="logo" src={logo} alt="logo" />
                 <h1 className="title">Juliana and Tiffany's App</h1>
                 <h2 className="blue">We design and develop applications</h2>
-        <Container>
+        <Container fluid>
         <Row>
           <Col>
              <img src={jImg} alt="jImg" clasName="lanImg"/>

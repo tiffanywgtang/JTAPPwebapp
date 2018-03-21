@@ -79,7 +79,7 @@ class Asteroids extends Component {
             comp =(
                 <div className="Asteroids">
                     <div>
-                    <h1 className="title white shadow">Asteroids Game</h1>
+                    <h1 className="title0 white shadow">Asteroids Game</h1>
                     <p className="white">Destroy 5 asteroids first to win!</p>
                     <br /><br />
                     <h4 className="white shadow">Choose your player:</h4>

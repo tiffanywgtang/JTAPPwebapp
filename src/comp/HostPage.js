@@ -40,13 +40,6 @@ class HostPage extends Component {
         this.socket = mySocket("https://jtappquiz.herokuapp.com/");
         //this.socket = mySocket("http://localhost:10003");
     
-//        this.socket.on("numQ", (data)=>{
-//            console.log(data);
-//            this.setState({
-//                MSG:data + " questions asked"
-//            })
-//        });
-//        console.log(this.state.MSG);
         
     }
     changeQ=(evt)=>{
@@ -116,7 +109,9 @@ class HostPage extends Component {
       if(num === clickLimit) {
              return(
                   <Alert color="success">
-                    <p>Questions sent! Thanks!</p>
+                    <h3>Questions sent! Thanks!</h3>
+                    <br/><br/>
+                    <Button color="success" onClick={this.props.backButton}>Back To The Planets</Button>
                   </Alert>
                 )
              
@@ -127,7 +122,7 @@ class HostPage extends Component {
         <Row className="HostRow white shadow">
         
             <Col sm="12">
-                <p>Ask 5 Questions about Space:</p> <hr/>
+                <h4>Ask 5 Questions about Space:</h4> <hr/>
             </Col>
         
         
@@ -147,7 +142,7 @@ class HostPage extends Component {
         
             <Col sm="12">
                 <FormGroup>
-                  <Label>Which one is the correct answer?</Label>
+                  <Label><h4>Which one is the correct answer?</h4></Label>
                   <Input ref="A" type="select" onChange={this.changeA}>
                     <option>1</option>
                     <option>2</option>
@@ -159,7 +154,7 @@ class HostPage extends Component {
         
         
             <Col sm="6">
-                <p>{this.state.MSG} questions asked</p>
+                <h4>{this.state.MSG} questions asked</h4>
             </Col>
             
             <Col sm="6">

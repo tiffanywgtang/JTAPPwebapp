@@ -76,7 +76,7 @@ class PlayerPage extends Component {
             <Container fluid className="playerchoose">
             <Row>
                 <Col sm="12" className="title3">
-                    <h1>Space Quiz!</h1>  <hr/>
+                    <h1 className="title6">Space Quiz!</h1>  <hr/>
                 </Col>
           
                 <Col sm="7" >
@@ -88,7 +88,7 @@ class PlayerPage extends Component {
                 </Col>
             
                 <Col sm="12" className="avatarBox">
-                    <p className="aText">Choose your avatar:</p>
+                    <p className="white aText">Choose your avatar:</p>
                     {allava}
                 </Col>
                 
