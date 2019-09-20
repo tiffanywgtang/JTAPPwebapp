@@ -41,7 +41,7 @@ class ChatPage extends Component {
     componentDidMount() {
  
     this.Clock = setInterval( () => this.GetTime(), 1000 );
- 
+
   }
     
     changePage(bool){
@@ -140,11 +140,24 @@ class ChatPage extends Component {
     })
   }
     
-    
-    sendMsg(){
-        
+
+    sendMsg(evt){
+        //do nothing if message is empty.
+        if (this.state.msg === "")
+            return;
+
+        //prevent page reload from submit function
+        evt.preventDefault();
+
+        //send message
         var msg = this.state.username+" "+"("+this.state.time+")"+": " +this.state.msg;
-        this.socket.emit("msg", msg);         
+        this.socket.emit("msg", msg);      
+        
+        //clear text input upon sending message.
+        document.getElementsByClassName("userMsg")[0].value = "";
+        this.setState({
+            msg: ""
+        });
     }
     
     changeava(i){
@@ -210,10 +223,12 @@ class ChatPage extends Component {
             </div>
               <div className="chatDisplay">{allmsgs}</div>
                  
-                <div className="controls">  
+                <div className="controls">
+                  <form onSubmit={this.sendMsg}>
                     <input type="text" placeholder="message" onChange={this.saveMsg} className="userMsg"/>
-                    <button onClick={this.sendMsg} className="sendBtn">Send</button>
-                  </div>
+                    <button type="submit" className="sendBtn">Send</button>
+                  </form>
+                </div>
               
               </div>
           )
